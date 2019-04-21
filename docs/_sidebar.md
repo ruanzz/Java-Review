@@ -1,2 +1,2 @@
-- [Core](core/)
-- [Spring](spring/)
+- [Core](zh-cn/core/)
+- [Spring](zh-cn/spring/)
