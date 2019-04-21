@@ -1,2 +1,2 @@
-- [快速入门](spring/quickstart.md)
-    - [IOC](spring/ioc.md)
+- [快速入门](quickstart.md)
+    - [IOC](ioc.md)

@@ -1,2 +1,2 @@
-- [快速入门](core/quickstart.md)
+- [快速入门](quickstart.md)
 
