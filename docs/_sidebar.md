@@ -1,2 +1,0 @@
-- [Core](core/)
-- [Spring](spring/)
