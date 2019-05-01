@@ -1,6 +1,7 @@
 package com.ruanzz.spring;
 
 import com.ruanzz.spring.annotaion.configuration.Config;
+import com.ruanzz.spring.annotaion.profile.DataSourceConfig;
 import com.ruanzz.spring.bean.Blue;
 import com.ruanzz.spring.bean.Book;
 import com.ruanzz.spring.bean.Color;
@@ -71,5 +72,17 @@ public class AnnotationTest {
     Object colorFactoryBean = applicationContext.getBean("&colorFactoryBean");
     assert colorFactoryBean.getClass() == ColorFactoryBean.class;
 
+  }
+
+  @Test
+  public void testProfile() {
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+    applicationContext.getEnvironment().setActiveProfiles("test", "prod");
+    applicationContext.register(DataSourceConfig.class);
+    applicationContext.refresh();
+
+    assert Objects.nonNull(applicationContext.getBean("testDataSource"));
+    assert Objects.nonNull(applicationContext.getBean("prodDataSource"));
+    assert Objects.nonNull(applicationContext.getBean("yellow"));
   }
 }
